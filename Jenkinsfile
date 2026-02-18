@@ -36,4 +36,23 @@ pipeline{
             }
         }
     }
+    post{
+        success{
+            script{
+                emailext from: "sajid.ahmad.lrn@gmail.com",
+                to: "sajid.ahmad.lrn@gmail.com",
+                body: " Build is successful",
+                subject: " Build configuration"
+            }
+        }
+        failure{
+            script{
+                emailext from: "sajid.ahmad.lrn@gmail.com",
+                to: "sajid.ahmad.lrn@gmail.com",
+                body: " Build Failed miserably",
+                subject: " Build configuration"
+            }
+        }
+        
+    }
 }
